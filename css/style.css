@@ -1,0 +1,258 @@
+/* Estilos gerais */
+* {
+  box-sizing: border-box;
+  font-family: serif      ;
+}
+
+html{
+  margin: 0;
+  padding: 0;
+  font-family: serif;
+  /* font-size: 62.5%  ;  */
+  /* equivalente a 10 px */
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background: linear-gradient(90deg, #333, #3498db); /* Gradiente horizontal */
+  color: #903939;
+}
+p{
+  font-size: 1.6rem;
+  /* equivalente a 16px */
+}
+
+ul{
+  font-size: 10%;
+  background-color: aqua;
+}
+
+ul  li{  
+  font-size: 10%;
+  font-size:  .8em;
+}
+li {
+  color: rgba(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.2);
+
+
+}
+
+/* define background  para tag ul */
+.navegacao{
+  background-color: brown;
+}
+
+/* altera o  css para class com respectivo nome  ,  que  nesse caso  
+é  navegação */
+
+
+h1 , h2,  p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2rem;/*equivalente  a  20 px  */
+  font-size: 20px;
+}
+
+a {
+  color: #3498db;
+  text-decoration: none;
+}
+#primeiro-link a{
+  color: #903939;
+  } 
+  /* alterando a cor do id correspondente */
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Cabeçalho */
+header {
+  background: linear-gradient(90deg, #333, #3498db); /* Gradiente horizontal */
+  color: #fff;
+  padding: 10px 20px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra */
+}
+
+
+header h1 {
+  margin: 0;
+  font-size: 1rem;  /* equivalente   a  10px */
+}
+
+header nav {
+  margin-top: 10px;
+}
+
+header nav a {
+  color: #fff;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+/* Seção principal */
+main {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 20px auto;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+main h1  {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #3498db;
+}
+
+main h2 {
+  margin-top: 0;
+  color: #333;
+  font-size: 0.11rem;
+}
+.lista-nao-ordenada ul {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #3498db;
+
+}
+/* Estilo para artigos */
+article {
+  background: #fff; /* Fundo claro para contraste */
+  margin: 20px 0; /* Espaço entre os artigos */
+  padding:20px; /* Espaçamento interno */
+  border: 1px solid #ddd; /* Borda sutil */
+  border-radius: 5px; /* Bordas arredondadas */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra leve */
+}
+
+article h2 {
+  color: #333; /* Título com cor destacada */
+  font-size: 1rem; /* Tamanho maior para o título */
+  margin-top: 0; /* Remove o espaçamento superior padrão */
+}
+
+article p {
+  font-size: 1rem; /* Texto com tamanho padrão */
+  color: #555; /* Cor cinza para o texto */
+  line-height: 1.8; /* Espaçamento entre linhas */
+}
+
+article a {
+  color: #3498db; /* Link destacado */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+article a:hover {
+  text-decoration: underline; /* Sublinhar ao passar o mouse */
+}
+/* Estilo do formulário */
+form {
+  background: #f9f9f9; /* Fundo claro */
+  padding: 20px;
+  margin: 20px ;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra leve */
+}
+
+/* Estilo das labels */
+form label {
+  display: block; /* Cada label ocupa uma linha */
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Estilo dos inputs e textarea */
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form textarea,
+form select {
+  width: 100%; /* Largura total */
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  box-sizing: border-box; /* Inclui padding na largura total */
+  transition: border-color 0.3s ease; /* Efeito suave na borda */
+}
+
+form input:focus,
+form textarea:focus,
+form select:focus {
+  border-color: #3498db; /* Destaca a borda ao focar */
+  outline: none; /* Remove a borda padrão */
+}
+
+/* Estilo dos botões */
+form button,
+form input[type="submit"] {
+  background: #3498db;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease; /* Efeito suave no hover */
+}
+
+form button:hover,
+form input[type="submit"]:hover {
+  background: linear-gradient(90deg, #333, #3498db);  /* Cor mais escura ao passar o mouse */
+}
+
+/* Estilo adicional para checkboxes e radio buttons */
+form input[type="checkbox"],
+form input[type="radio"] {
+  margin-right: 10px;
+}
+
+form .checkbox-group,
+form .radio-group {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+form  div{
+  background: #fff;
+  border:  1px solid   #6b6a6a;
+  margin: 20px;
+  padding: 10px;
+  font-family: sans-serif;
+  font-weight: bold;
+  margin-top: 10;
+}
+
+div{
+  position: static;
+  position: relative;
+
+}
+
+/* Rodapé */
+footer {
+  background: linear-gradient(90deg, #333, #3498db); /* Gradiente horizontal */
+  color: #ccc;
+  text-align: center;
+  padding: 10px 20px;
+  margin-top: 20px;
+}
+label{
+  position: absolute;
+  top: 5px;
+  margin: 5px;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
