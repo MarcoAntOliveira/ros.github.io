@@ -20,7 +20,7 @@ body {
 }
 p{
   font-size: 1.6rem;
-  color: #161515
+  color: #161515;
   /* equivalente a 16px */
 }
 
@@ -33,15 +33,17 @@ li {
   color: rgba(0, 0, 0);
   background-color: rgba(237, 236, 236, 0.2);
   font-size: 1em;
-
 }
+
+
+
 
 /* define background  para tag ul */
 .navegacao{
   background-color: brown;
 }
 
-/* altera o  css para class com respectivo nome  ,  que  nesse caso  
+/* altera o  css para class com respectivo nome  ,  que  nesse caso
 é  navegação */
 
 
@@ -57,7 +59,7 @@ a {
 }
 #primeiro-link a{
   color: #903939;
-  } 
+  }
   /* alterando a cor do id correspondente */
 
 a:hover {
@@ -253,3 +255,16 @@ footer p {
   margin: 0;
   font-size: 0.9rem;
 }
+
+.aerospace {
+  background-color: rgba(237, 236, 236, 0.2);
+  font-size: 1em;
+  padding: 20px;
+}
+
+img {
+  width: 100%;
+  height: auto; /* Mantém a proporção */
+  max-width: 800px; /* Define um limite máximo opcional */
+}
+

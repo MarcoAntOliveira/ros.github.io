@@ -20,16 +20,120 @@
     <main>
         <h2>Controle de Aeronave Comercial</h2>
 
-      
+
         <article>
-            Como o objeto de estudo é o controle do angulo de ataque um avião, é importante introduzir brevemente suas principais características e analisar os componentes que contribuem para as funções aerodinâmicas e, consequentemente, para a eficiência do voo.O desempenho aerodinâmico de um avião é influenciado diretamente pelo design e geometria  de suas partes. 
-            <p>
-                \[
-                S = B \cdot C
-                \]
-            </p>
-          
-        </article>
+          <h3>Introdução</h3>
+          O controle de desempenho em sistemas aeronáuticos é um desafio complexo que exige o equilíbrio entre precisão, estabilidade e robustez. No caso específico do controle de uma aeronave, é crucial garantir que a aeronave oscile em torno do ângulo desejado de forma estável e em um tempo adequado. Esse tempo deve considerar tanto as características mecânicas das estruturas da aeronave quanto as influências das condições ambientais, como vento e temperatura.
+
+          Neste trabalho, abordamos o desempenho do sistema de controle utilizando diferentes métodos de ajuste de controladores PID (Proporcional, Integrativo e Derivativo). O objetivo é relacionar o controlador às restrições físicas e dinâmicas do sistema, buscando um compromisso entre desempenho e conforto. Assumimos que a oscilação do ângulo de ataque não ultrapasse valores críticos, garantindo a integridade estrutural e o desempenho mecânico da aeronave.
+
+          Para isso, exploramos os seguintes tópicos:
+
+              Método de Ziegler-Nichols: Utilizado para ajustar os parâmetros do controlador PID a partir das características dinâmicas do sistema em uma malha fechada.
+              Controladores Proporcionais (P), PI e PID: Analisamos os impactos de cada um desses controladores na resposta do sistema, no overshoot e no erro em estado estacionário.
+              Lugar das Raízes e Análise de Frequência: Utilizamos métodos gráficos e analíticos para entender o comportamento em frequência e a estabilidade do sistema.
+
+          Este estudo visa fornecer insights sobre como ajustar controladores PID em sistemas aeronáuticos, garantindo o equilíbrio entre desempenho técnico e conforto. As análises incluem a aplicação prática dos métodos e resultados experimentais que demonstram os efeitos das escolhas de parâmetros nos controladores, tornando este estudo relevante tanto para aplicações práticas em engenharia quanto para o desenvolvimento de sistemas de controle robustos e confiáveis.
+          <h3>Grandezas a serenm controladas</h3>
+          <h2>Grandezas a serem controladas</h2>
+    <p>O objeto de estudo é o controle do ângulo de ataque de um avião. Para isso, é essencial compreender suas principais características e os componentes que influenciam as funções aerodinâmicas e a eficiência do voo.</p>
+
+    <h3>Componentes Aerodinâmicos</h3>
+    <ul>
+        <li><strong>Superfícies aerodinâmicas:</strong> Partes que oferecem pequena resistência ao avanço, mas não contribuem diretamente para o voo:
+            <ul>
+                <li>Spinner</li>
+                <li>Carenagem da roda</li>
+            </ul>
+        </li>
+        <li><strong>Aerofólios:</strong> Componentes que geram forças úteis ao voo:
+            <ul>
+                <li>Hélice</li>
+                <li>Asa</li>
+                <li>Estabilizador</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>Elementos de uma Asa</h3>
+    <ul>
+        <li><strong>Envergadura (B):</strong> Comprimento da asa.</li>
+        <li><strong>Corda (C):</strong> Linha reta entre o bordo de ataque e o bordo de fuga.</li>
+        <li><strong>Raiz da asa:</strong> Ponto de fixação ao corpo do avião.</li>
+        <li><strong>Ponta da asa:</strong> Extremo oposto à raiz.</li>
+        <li><strong>Bordo de fuga:</strong> Parte traseira onde o ar se separa.</li>
+        <li><strong>Bordo de ataque:</strong> Parte dianteira onde o ar incide primeiro.</li>
+    </ul>
+    <p><strong>Área da Asa:</strong> S = B &times; C</p>
+
+    <h3>Sustentação & Arrasto</h3>
+    <p><strong>Sustentação:</strong> Força perpendicular ao vento relativo:</p>
+    <p>L = (\rho V² S C<sub>L</sub>) / 2</p>
+    <ul>
+        <li>Densidade do ar (\rho)</li>
+        <li>Quadrado da velocidade (V²)</li>
+        <li>Área da asa (S)</li>
+        <li>Coeficiente de sustentação (C<sub>L</sub>)</li>
+    </ul>
+    <p><strong>Arrasto:</strong> Força paralela ao vento relativo:</p>
+    <p>D = (\rho V² S C<sub>D</sub>) / 2</p>
+    <ul>
+        <li>Densidade do ar (\rho)</li>
+        <li>Quadrado da velocidade (V²)</li>
+        <li>Área da asa (S)</li>
+        <li>Coeficiente de arrasto (C<sub>D</sub>)</li>
+    </ul>
+
+    <h3>Comandos de Voo</h3>
+    <p>Os movimentos de uma aeronave ocorrem em torno de três eixos:</p>
+    <ul>
+        <li><strong>Longitudinal:</strong> Rolagem (bancagem).</li>
+        <li><strong>Transversal:</strong> Arfagem (cabra e pica).</li>
+        <li><strong>Vertical:</strong> Guinada.</li>
+    </ul>
+
+    <h3>Superfícies de Controle</h3>
+    <ul>
+        <li><strong>Profundor:</strong> Controla a arfagem.</li>
+        <li><strong>Ailerons:</strong> Controlam a rolagem.</li>
+        <li><strong>Leme de direção:</strong> Controla a guinada.</li>
+    </ul>
+
+    <h3>Tipos de Equilíbrio</h3>
+    <p>Para estabilidade em voo, a força e o momento resultantes devem ser zero. O equilíbrio pode ser:</p>
+    <ul>
+        <li><strong>Estável:</strong> A aeronave retorna ao equilíbrio.</li>
+        <li><strong>Instável:</strong> A aeronave se afasta do equilíbrio.</li>
+        <li><strong>Indiferente:</strong> Sem tendência específica.</li>
+    </ul>
+
+    <h3>Estabilidade</h3>
+    <h4>Estabilidade Longitudinal</h4>
+    <p>Relacionada ao controle do ângulo de ataque:</p>
+    <ul>
+        <li>Estável: Retorna ao equilíbrio.</li>
+        <li>Instável: Se afasta do equilíbrio.</li>
+        <li>Indiferente: Não há tendência definida.</li>
+    </ul>
+
+    <h4>Estabilidade Lateral</h4>
+    <p>Instabilidade em torno do eixo longitudinal:</p>
+    <ul>
+        <li>Estável: Retorna ao equilíbrio.</li>
+        <li>Indiferente: Mantém o desequilíbrio.</li>
+        <li>Instável: Amplia o desequilíbrio.</li>
+    </ul>
+
+    <h4>Estabilidade Direcional</h4>
+    <p>Instabilidade em torno do eixo vertical:</p>
+    <ul>
+        <li>Estável: Retorna ao equilíbrio.</li>
+        <li>Indiferente: Mantém o desequilíbrio.</li>
+        <li>Instável: Amplia o desequilíbrio.</li>
+    </ul>
+
+    <p>O estudo da estabilidade longitudinal será o foco principal, mas os outros eixos também serão considerados.</p>
+  </article>
     </main>
     <footer>
         <p>&copy; 2025 , Marcos Antonio . Todos os direitos reservados.</p>
